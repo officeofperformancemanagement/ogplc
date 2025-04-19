@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # wipe away any previous builds
-rm -fr dist opengov_dump.egg-info Pipfile Pipfile.lock
+rm -fr dist ogplc.egg-info Pipfile Pipfile.lock
 
 # make sure libraries used for publishing are up to date
 python3 -m pip install --user --upgrade setuptools wheel twine
