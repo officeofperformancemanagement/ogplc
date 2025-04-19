@@ -213,7 +213,7 @@ def dump(
             "Updated": str(datetime.datetime.now()),
             "Slug": slug,
         }
-        with open(metadata_path, "w", newline="") as f:
+        with open(metadata_path, "w", newline="", encoding="utf-8") as f:
             json.dump(metadata, f, ensure_ascii=True, indent=4)
         if debug_level >= 1:
             print(f"[ogplc] saved metadata to: {metadata_path}")
@@ -284,7 +284,7 @@ def dump(
         for step in all_approval_steps:
             fieldnames.append(f"{step}: completion date")
 
-        with open(outfile, "w", newline="") as f:
+        with open(outfile, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=delimiter)
             writer.writeheader()
             if debug_level >= 1:
@@ -373,7 +373,7 @@ def dump(
                         del outrow[key]
                         return
 
-                with open(outfile, "a", newline="") as f:
+                with open(outfile, "a", newline="", encoding="utf-8") as f:
                     try:
                         writer = csv.DictWriter(
                             f, fieldnames=fieldnames, delimiter=delimiter
@@ -400,7 +400,7 @@ def dump(
             if written >= max_rows:
                 break
 
-        with open(outfile, "a", newline="") as f:
+        with open(outfile, "a", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=delimiter)
             writer.writerow(outrow)
         if debug_level >= 1:
