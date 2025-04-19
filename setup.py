@@ -12,7 +12,7 @@ setup(
     entry_points={
         "console_scripts": ["ogplc=ogplc.__init__:main"],
     },
-    version="0.0.0",
+    version="0.0.1",
     description="High-Level Database Client for OpenGov Permitting & Licensing",
     long_description=long_description,
     long_description_content_type="text/markdown",
